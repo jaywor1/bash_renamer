@@ -61,13 +61,13 @@ if(rename_files):
     if(ans.lower() == "y"):
         os.chmod("rename_files.sh",0o555)
         os.system("./rename_files.sh")
+        print("Do you want to remove the temp files (\'rename_files.sh\' \'old_names.txt\')? [y/n]")
+        ans = input()
+        if(ans.lower() == "y"):
+            os.remove("rename_files.sh")
+            os.remove("old_names.txt")
+        elif(ans.lower() == "n"):
+            print("No temp files deleted")
+        else:
+            print("invalid input\nNo temp files deleted")
 
-    print("Do you want to remove the temp files (\'rename_files.sh\' \'old_names.txt\')? [y/n]")
-    ans = input()
-    if(ans.lower() == "y"):
-        os.remove("rename_files.sh")
-        os.remove("old_names.txt")
-    elif(ans.lower() == "n"):
-        print("No temp files deleted")
-    else:
-        print("invalid input\nNo temp files deleted")
