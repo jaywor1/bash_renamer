@@ -57,7 +57,7 @@ for i in ${!ARRAY[@]}; do
 			# if equals to '.'
 			NAME+="${ELEMENT:y:$((${#ELEMENT} - y + 1))}"
 			break
-		elif [ $ASCII_CODE -gt 40 ] && [ $ASCII_CODE -lt 91 ]; then
+		elif [ $ASCII_CODE -gt 64 ] && [ $ASCII_CODE -lt 91 ]; then
 			# if is upper
 			CURRENT_STATE=1;
 			if ! [ $(($OLD_STATE-$CURRENT_STATE)) -eq 0 ]; then
